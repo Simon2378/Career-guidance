@@ -1,0 +1,181 @@
+body {
+font-family: Arial, sans-serif;
+margin: 0;
+background: url('Main.png') center/cover fixed;
+background-attachment: fixed;
+}
+
+/* global box-sizing for predictable layouts */
+*, *::before, *::after { box-sizing: border-box; }
+
+body.department-view {
+background: #f5f7fb;
+}
+
+body.health-view {
+background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('health science.png') center/cover fixed;
+}
+
+body.business-view {
+background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('Real Estate Mastermind.png') center/cover fixed;
+}
+
+body.agriculture-view {
+background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('Spread Love 🫶🏼.png') center/cover fixed;
+}
+
+body.technology-view {
+background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('technology.png') center/cover fixed;
+}
+
+header {
+background: rgba(255,255,255,0.8);
+color: #002b5b;
+text-align: center;
+padding: 30px;
+}
+
+header h1 { margin: 0 0 6px 0; font-size: 1.8rem; }
+header p { margin: 0; color: #234; }
+
+#searchBar {
+margin-top: 15px;
+padding: 12px;
+width: 60%;
+border-radius: 8px;
+border: none;
+font-size: 16px;
+display: block; /* always visible on main page */
+}
+
+/* banner shown at top of department details pages */
+.dept-banner {
+  width: 100%;
+  padding: 60px 20px;
+  text-align: center;
+  color: #fff;
+  background: rgba(0,0,0,0.4); /* transparent overlay so underlying body image is visible */
+  box-sizing: border-box;
+  margin-bottom: 30px;
+}
+.dept-banner h1 {
+  margin: 0;
+  font-size: 2em;
+}
+
+
+.department-container {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+gap: 20px;
+padding: 40px;
+max-width: 1100px;
+margin: 0 auto;
+}
+
+.card {
+background: white;
+width: 250px;
+border-radius: 10px;
+box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+cursor: pointer;
+transition: 0.3s;
+overflow: hidden;
+}
+
+.card:focus {
+  outline: 3px solid rgba(0,43,91,0.12);
+  transform: translateY(-6px);
+}
+
+.card:hover {
+transform: scale(1.05);
+}
+
+.card img {
+width: 100%;
+height: 150px;
+object-fit: cover;
+}
+
+.card h2 {
+margin: 10px;
+font-size: 1.1rem;
+}
+
+.card p {
+margin: 10px;
+color: gray;
+}
+
+#details {
+width: 80%;
+margin: auto;
+background: rgba(255, 255, 255, 0.75); /* lighter overlay to show more of the background */
+padding: 15px 20px; /* tighter padding for a sleeker look */
+border-radius: 8px;
+box-shadow: 0 0 8px rgba(0,0,0,0.1);
+margin-bottom: 20px;
+margin-top: 8px;
+opacity: 0;
+transform: translateY(8px);
+transition: opacity 260ms ease, transform 260ms ease;
+}
+
+#details.visible { opacity: 1; transform: translateY(0); }
+
+/* banner transitions */
+#deptBanner, .dept-banner {
+  width: 100%;
+  padding: 48px 20px;
+  text-align: center;
+  color: #fff;
+  background: rgba(0,0,0,0.35);
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: opacity 260ms ease, transform 260ms ease;
+}
+
+#deptBanner.visible, .dept-banner.visible { opacity: 1; transform: translateY(0); }
+
+/* advice panel on main page with background image and readable overlay */
+#advice {
+  width: 80%;
+  margin: 30px auto;
+  background: url('graduation.png') center/cover no-repeat;
+  padding: 25px 30px;
+  border-left: 6px solid #002b5b;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  color: #333;
+  line-height: 1.6;
+  position: relative;
+  overflow: hidden;
+}
+#advice::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.85);
+  border-radius: 8px;
+}
+#advice > * { position: relative; }
+#advice h2 { margin-top: 0; color: #002b5b; }
+#advice p { margin: 10px 0; }
+
+
+#backBtn {
+background: #002b5b;
+color: white;
+border: none;
+border-radius: 5px;
+font-size: 16px;
+transition: 0.3s;
+}
+
+#backBtn:hover {
+background: #00447a;
+transform: scale(1.05);
+}

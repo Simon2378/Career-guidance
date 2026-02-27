@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Career Guidance</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+<h1>University Career Guidance Portal</h1>
+<p>Helping Advanced Level Students Choose the Right Career Path</p>
+
+<input type="text" id="searchBar" placeholder="Search a field like Cybersecurity..." onkeyup="searchCourse()" aria-label="Search courses">
+<button id="backBtn" onclick="goBack()" style="display: none; margin-top: 15px; padding: 10px 20px; cursor: pointer;">Back to Departments</button>
+</header>
+
+<section id="mainPage" class="department-container">
+
+<div class="card" tabindex="0" role="button" aria-label="Open Health Science department" onclick="showDepartment('health')" onkeydown="cardKeydown(event,'health')">
+<img src="Health science1.png" alt="Health Science">
+<h2>Health Science</h2>
+<p>Medical and health-related careers</p>
+</div>
+
+<div class="card" tabindex="0" role="button" aria-label="Open Business department" onclick="showDepartment('business')" onkeydown="cardKeydown(event,'business')">
+<img src="Business1.png" alt="Business">
+<h2>Business</h2>
+<p>Management and entrepreneurship</p>
+</div>
+
+<div class="card" tabindex="0" role="button" aria-label="Open Agriculture department" onclick="showDepartment('agriculture')" onkeydown="cardKeydown(event,'agriculture')">
+<img src="agriculture1.png" alt="Agriculture">
+<h2>Agriculture</h2>
+<p>Farming and food production</p>
+</div>
+
+<div class="card" tabindex="0" role="button" aria-label="Open Technology department" onclick="showDepartment('technology')" onkeydown="cardKeydown(event,'technology')">
+<img src="Tech1.png" alt="Technology">
+<h2>Technology</h2>
+<p>Computers and engineering fields</p>
+</div>
+</section>
+
+<!-- advice section shown on main page -->
+<section id="advice" class="advice">
+  <h2>Congratulations on Passing Your GCE Advanced Level!</h2>
+  <p>You’ve reached a major milestone, and we are incredibly proud of you. This is your first step toward a bright future in university and beyond.</p>
+  <p>If you aspire to join the University of Buea (UB), note that passing English is mandatory, along with other required subjects. You must meet specific entrance criteria, so ensure you’ve passed those core exams. For private universities, the process is simpler: you just apply directly to the department of your choice.</p>
+  <p>Before you apply, make sure you have these essential documents ready: a photocopy of your birth certificate, and a receipt of your GCE results showing that you passed.</p>
+  <p>Take your time, explore your options, and remember: this is just the beginning of an amazing journey.</p>
+</section>
+
+<!-- banner area shown when a department is selected -->
+<div id="deptBanner" class="dept-banner" style="display: none;"></div>
+<section id="details" style="display: none;"></section>
+
+<script src="script.js"></script>
+</body>
+</html>
