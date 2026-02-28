@@ -660,3 +660,4 @@ details.style.display = "block";
 // animate search results in
 requestAnimationFrame(() => details.classList.add('visible'));
 }
+
